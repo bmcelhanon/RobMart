@@ -1,0 +1,9 @@
+<h3>Character Points: {{wormStatus.characterPoints}}</h3>
+<h3>Shard Points: {{wormStatus.shardPoints}}</h3>
+<h2 (click)="selectedView=1">Powers</h2>                 
+<h2 (click)="selectedView=2">Restrictions</h2>
+<div *ngIf="selectedView==1">
+  Powers (total of {{wormStatus.selectedShards.length}}):
+  <app-shards [wormStatus]="wormStatus"></app-shards>
+</div>
+

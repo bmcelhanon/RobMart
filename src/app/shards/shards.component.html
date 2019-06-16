@@ -1,0 +1,8 @@
+<div >
+  Power Picking Mode!
+  <ul class="shards">
+      <li *ngFor="let shard of shards" [ngClass]="{'selectedShard': wormStatus.selectedShards.includes(shard.id)}" (click)="addShard(shard)">
+          {{shard.name}} <span class="badge">{{shard.pointCost}}</span>
+      </li>
+  </ul>
+</div>
