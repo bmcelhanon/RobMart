@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WormComponent } from './worm/worm.component';
 import { ShardsComponent } from './shards/shards.component';
+import { PerkflawComponent } from './perkflaw/perkflaw.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WormComponent,
-    ShardsComponent
+    ShardsComponent,
+    PerkflawComponent
   ],
   imports: [
     BrowserModule,

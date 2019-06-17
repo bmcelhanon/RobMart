@@ -1,0 +1,8 @@
+<div >
+  Perk and Flaw Picking Time!
+  <ul class="perkFlaws">
+      <li *ngFor="let perkFlaw of perkFlaws" [ngClass]="{'selectedPerkFlaws': wormStatus.selectedPerkFlaws.includes(perkFlaw.id)}" (click)="addPerkFlaw(perkFlaw)">
+          {{perkFlaw.name}} <span class="badge">{{perkFlaw.characterPointChange}}</span>
+      </li>
+  </ul>
+</div>

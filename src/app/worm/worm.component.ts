@@ -14,6 +14,7 @@ export class WormComponent implements OnInit {
     this.wormStatus.characterPoints = 15;
     this.wormStatus.shardPoints = 15;
     this.wormStatus.selectedShards = [];
+    this.wormStatus.selectedPerkFlaws = [];
   }
 
   ngOnInit() {

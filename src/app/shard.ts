@@ -3,4 +3,5 @@ export class Shard {
     name: string;
     description: string;
     pointCost: number;
+    type: number;
 }
