@@ -1,0 +1,10 @@
+<div *ngIf="selectedShard" class="right-element shard-detail">
+  <h2>{{selectedShard.name | uppercase}}</h2>
+  <div><span>Shard Points: </span>{{selectedShard.pointCost}}</div>
+  <div>
+    <p>
+      {{selectedShard.description}}
+    </p>
+    <button (click)="toggle()">{{getButtonText()}}</button>
+  </div>
+</div>

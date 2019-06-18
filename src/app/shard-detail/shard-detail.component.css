@@ -1,0 +1,11 @@
+.shard-detail{
+    width:200px;
+    background-color: #555;
+    margin-left: 20px;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+}
+
+button {
+    color: #000
+}

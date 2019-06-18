@@ -37,7 +37,7 @@ label {
   .shards li {
     position: relative;
     cursor: pointer;
-    background-color: #EEE;
+    background-color: #444;
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
@@ -45,17 +45,20 @@ label {
   }
    
   .shards li:hover {
-    color: #607D8B;
-    background-color: #DDD;
+    background-color: #555;
     left: .1em;
   }
 
   .shards .selectedShard {
-    background-color: #cfd8dc;
+    background-color: #4ea56b;
+  }
+
+  .shards .selectedShardType {
+    background-color: #acacac;
   }
    
   .shards a {
-    color: #333;
+    color: #FFF;
     text-decoration: none;
     position: relative;
     display: block;
@@ -73,10 +76,16 @@ label {
     background-color:#b37b13;
     line-height: 1em;
     position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.8em;
+    top: -5px;
+    height: 1.9em;
     min-width: 16px;
     float: right;
     border-radius: 0 4px 4px 0;
+  }
+
+  .shard-list{
+    background-color: #888;
+    border-radius: 4px 4px 4px 4px;
+    right: 30px;
+    margin: 5px;
   }

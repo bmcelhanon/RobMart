@@ -11,39 +11,34 @@ import { WormStatus } from '../wormStatus';
 export class ShardsComponent implements OnInit {
   @Input() wormStatus: WormStatus;
   shards: Shard[];
+  shardTypes: string[];
+  selectedShardType: number = 1;
+  selectedShard: Shard = null;
   constructor(private shardService:ShardService) { }
 
   ngOnInit() {
     this.getShards();
+    this.getShardTypes();
   }
 
   getShards(){
-    this.shards = this.shardService.getShards();
+    var shardType = this.selectedShardType;
+    this.shards = this.shardService.getShards().filter(function(shard){
+      return shard.type == shardType;
+    });
   }
 
-  addShard(shard: Shard) {
+  getShardTypes(){
+    this.shardTypes = this.shardService.getShardTypes();
+  }
 
-    // Check if this shard is already in the list of shards.
-    var alreadyAdded = this.wormStatus.selectedShards.some(function (s) {
-      return  s == shard.id;
-    });
-    
-    // If it isn't already added, add it to the list, provided it validates.
-    if (!alreadyAdded) {
-      if (shard.pointCost <= this.wormStatus.shardPoints) {
-        this.wormStatus.shardPoints -= shard.pointCost;
-        this.wormStatus.selectedShards.push(shard.id);
-      }
-      else{
-        console.log("Not enough shard points!") // TODO: Create better messenging.
-      }
-    }
-    // Otherwise, remove it from the list.
-    else
-    {
-      var toRemove = this.wormStatus.selectedShards.indexOf(shard.id);
-      this.wormStatus.shardPoints += shard.pointCost;
-      this.wormStatus.selectedShards.splice(toRemove, 1);
-    }
+  selectShard(shard: Shard){
+    this.selectedShard = shard;
+    console.log(shard.name);
+  }
+
+  selectShardType(shardType: string){
+    this.selectedShardType = this.shardTypes.indexOf(shardType)+1;
+    this.getShards();
   }
 }

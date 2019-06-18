@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Shard } from './shard';
-import { SHARDLIST } from './data-shardlist';
+import { SHARDLIST, SHARDTYPES } from './data-shardlist';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +11,9 @@ export class ShardService {
 
   getShards() : Shard[] {
     return SHARDLIST;
+  }
+
+  getShardTypes() : string[] {
+    return SHARDTYPES;
   }
 }
