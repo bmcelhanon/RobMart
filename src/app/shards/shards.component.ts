@@ -34,11 +34,32 @@ export class ShardsComponent implements OnInit {
 
   selectShard(shard: Shard){
     this.selectedShard = shard;
-    console.log(shard.name);
+    this.selectShardType(this.shardTypes[shard.type-1])
   }
 
   selectShardType(shardType: string){
     this.selectedShardType = this.shardTypes.indexOf(shardType)+1;
     this.getShards();
+  }
+
+  getFullShard(shardId: number){
+    var references = this.shardService.getShards().filter(function (s) {
+      return s.id == shardId;
+    });
+    return references[0]
+  }
+
+  addSlot(){
+    if (this.wormStatus.shardPoints >= 1){
+      this.wormStatus.shardPoints -= 1;
+      this.wormStatus.permittedShardCount += 1;
+    }
+  }
+
+  removeSlot(){
+    if (this.wormStatus.permittedShardCount >= 1 && (this.wormStatus.permittedShardCount + this.wormStatus.selectedShards.length > 3)){
+      this.wormStatus.shardPoints += 1;
+      this.wormStatus.permittedShardCount -= 1;
+    }
   }
 }

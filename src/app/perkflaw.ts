@@ -5,6 +5,4 @@ export class PerkFlaw {
     characterPointChange: number;
     shardPointChange: number;
     limit: number;
-    requires: number[];
-    incompatible: number[];
 }

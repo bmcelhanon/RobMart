@@ -34,6 +34,33 @@ label {
     padding: 0;
     width: 15em;
   }
+  .selectedShardsList {
+    margin-right: 10px;
+    list-style-type: none;
+    padding: 4px;
+    width: 15em;
+    background: #c44;
+    border-radius: 3px;
+  }
+
+  .selectedShardsList:hover {
+    background: rgb(209, 100, 100);
+    cursor: pointer;
+  }
+  .selectedShardsListSelected, .selectedShardsListSelected:hover {
+    background: rgb(114, 40, 5);
+    cursor: pointer;
+  }
+
+  .addSlot:hover {
+    background: rgb(49, 98, 190);
+    cursor: pointer;
+  }
+  .addSlot {
+    background:  rgb(32, 70, 141);
+    cursor: pointer;
+  }
+
   .shards li {
     position: relative;
     cursor: pointer;
@@ -49,7 +76,7 @@ label {
     left: .1em;
   }
 
-  .shards .selectedShard {
+  .shards .selectedShard, .shards .selectedShard:hover {
     background-color: #4ea56b;
   }
 

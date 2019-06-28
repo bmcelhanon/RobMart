@@ -1,10 +1,16 @@
 <div *ngIf="selectedShard" class="right-element shard-detail">
   <h2>{{selectedShard.name | uppercase}}</h2>
-  <div><span>Shard Points: </span>{{selectedShard.pointCost}}</div>
+  <div><span>Shard Point Cost: </span>{{selectedShard.pointCost}}</div>
   <div>
     <p>
       {{selectedShard.description}}
     </p>
-    <button (click)="toggle()">{{getButtonText()}}</button>
+    <span>Second Trigger:</span>
+    <p>
+      {{selectedShard.secondTriggerDescription}}
+    </p>
+    <button *ngIf="shardStatus == 0" (click)="add()">Add</button>
+    <button *ngIf="shardStatus > 0" (click)="remove()">Remove</button>
+    <button *ngIf="shardStatus == 1" (click)="secondTrigger()">Second Trigger</button>
   </div>
 </div>

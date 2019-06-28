@@ -9,7 +9,7 @@
       -------------------------------------------------<br/><br/>
   </div>
   <div class="section-wrapper"><div *ngIf="selectedView==1">
-      Powers (total of {{wormStatus.selectedShards.length}}):
+      Powers (Available Slots: {{wormStatus.permittedShardCount}}):
       <app-shards [wormStatus]="wormStatus"></app-shards>
     </div>
     <div *ngIf="selectedView==2">
